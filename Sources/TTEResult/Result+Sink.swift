@@ -3,7 +3,7 @@ import Foundation
 extension Result {
 
   @discardableResult
-  func sink(_ f: (Success) -> Void) -> Result<Void, Failure> {
+  public func sink(_ f: (Success) -> Void) -> Result<Void, Failure> {
     switch self {
     case .success(let success):
       f(success)

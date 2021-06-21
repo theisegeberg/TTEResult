@@ -5,7 +5,7 @@ extension Result {
   /// - Parameters:
   ///   - to: The keypath to which the value will be assigned
   ///   - on: The object whereon the value will be set
-  func assign<Root>(to: ReferenceWritableKeyPath<Root, Success>, on: Root) where Failure == Never {
+  public func assign<Root>(to: ReferenceWritableKeyPath<Root, Success>, on: Root) where Failure == Never {
     switch self {
     case .failure:
       fatalError()

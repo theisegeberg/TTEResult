@@ -38,7 +38,7 @@ extension Result {
   /// ```
   /// - Parameter errorNest: The method that nests one error inside another, typically it's the case of en error enum. These are static initialisers.
   /// - Returns: A result where errors are mapped into nested errors.
-  func nestError<T: Error>(in errorNest: (Error) -> T) -> Result<Success, T> {
+  public func nestError<T: Error>(in errorNest: (Error) -> T) -> Result<Success, T> {
     self.mapError {
       $0.nestError(in: errorNest)
     }

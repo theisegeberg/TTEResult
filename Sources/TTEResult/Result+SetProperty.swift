@@ -8,7 +8,7 @@ extension Result {
   ///   - v: The result from which to get the value
   /// - Returns: A new void result. Effectively this consumes both results
   @discardableResult
-  func setProperty<Value>(
+  public func setProperty<Value>(
     _ kp: ReferenceWritableKeyPath<Success, Value?>, _ v: Result<Value, Failure>
   ) -> Result<Void, Failure> {
     zip(self, v)
@@ -24,7 +24,7 @@ extension Result {
   ///   - v: The result from which to get the value
   /// - Returns: A new void result. Effectively this consumes both results
   @discardableResult
-  func setProperty<Value>(
+  public func setProperty<Value>(
     _ kp: ReferenceWritableKeyPath<Success, Value>, _ v: Result<Value, Failure>
   ) -> Result<Void, Failure> {
     zip(self, v).flatMap { (root, value) in

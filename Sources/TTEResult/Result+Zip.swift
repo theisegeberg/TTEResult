@@ -5,7 +5,7 @@ import Foundation
 ///   - a: Result A
 ///   - b: Result B
 /// - Returns: A result of (A,B)
-func zip<A, B, Failure>(_ a: Result<A, Failure>, _ b: Result<B, Failure>) -> Result<(A, B), Failure>
+public func zip<A, B, Failure>(_ a: Result<A, Failure>, _ b: Result<B, Failure>) -> Result<(A, B), Failure>
 {
   a.flatMap { a in
     b.flatMap { b in
